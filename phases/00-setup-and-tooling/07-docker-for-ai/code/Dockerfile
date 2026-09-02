@@ -40,11 +40,12 @@ RUN python -m pip install --no-cache-dir \
     transformers \
     datasets \
     accelerate \
-    safetensors
+    safetensors \
+    qdrant_client
 
-WORKDIR /workspace
+WORKDIR /ai_lessons
 
-VOLUME ["/workspace", "/models"]
+VOLUME ["/ai_lessons/ai-engineering-from-scratch", "/ai_lessons/models"]
 
 EXPOSE 8888
 

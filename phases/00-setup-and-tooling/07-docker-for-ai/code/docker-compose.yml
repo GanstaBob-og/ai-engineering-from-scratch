@@ -11,9 +11,9 @@ services:
               count: all
               capabilities: [gpu]
     volumes:
-      - ../../../:/workspace
-      - ~/models:/models
-      - ~/datasets:/data
+      - ../../../:/ai_lessons/ai-engineering-from-scratch
+      - ~/models:/ai_lessons/models
+      - ~/datasets:/ai_lessons/data
     ports:
       - "8888:8888"
     stdin_open: true
