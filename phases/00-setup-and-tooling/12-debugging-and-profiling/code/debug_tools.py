@@ -170,7 +170,7 @@ def demo_nan_detection():
         nn.Linear(256, 10),
     )
 
-    x = torch.randn(4, 784)
+    x = torch.randn(4, 784) / 0
     target = torch.randint(0, 10, (4,))
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
@@ -183,10 +183,10 @@ def demo_nan_detection():
     nan_found = detect_nan(model, loss, step=0)
     print(f"  NaN detected: {nan_found}")
 
-    fake_nan_loss = torch.tensor(float("nan"))
-    print(f"  Simulated NaN loss: {fake_nan_loss.item()}")
-    nan_found = detect_nan(model, fake_nan_loss, step=99)
-    print(f"  NaN detected: {nan_found}")
+    # fake_nan_loss = torch.tensor(float("nan"))
+    # print(f"  Simulated NaN loss: {fake_nan_loss.item()}")
+    # nan_found = detect_nan(model, fake_nan_loss, step=99)
+    # print(f"  NaN detected: {nan_found}")
 
 
 def demo_device_checking():
